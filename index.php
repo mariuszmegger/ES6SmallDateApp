@@ -7,7 +7,7 @@ require_once('parts/header.php');
     <div class="col-sm-3 col-xs-12 appContainer">
       <div class="col-sm-12 appHead">
         <div class="col-sm-12">
-          <i class="fa fa-angle-left" aria-hidden="true"></i>
+          <a href="chat.php"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
           Sophie
         </div>
       </div>
@@ -28,7 +28,7 @@ require_once('parts/header.php');
         </div>
       </div>
       <div class="col-sm-12 appFooter">
-        <button class="btn btn-success">ADD AS FRIEND</Button>
+        <button class="btn addFriend notAdded">ADD AS FRIEND</Button>
       </div>
     </div>
   </div>

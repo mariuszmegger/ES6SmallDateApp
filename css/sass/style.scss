@@ -5,226 +5,247 @@ $starColor : white;
 body{
     background-color:$backgroundColor;
 }
+//Layout details
 
 .appContainer{
-  border:1px solid black;
-  min-height:500px;
+    border:1px solid black;
+    min-height:500px;
 
-  padding:0;
-  padding-bottom:10px;
-  margin-top:30px;
-  .appHead{
-    background-color:$buttonColor;
-    color:white;
-    padding:12px;
-    font-size: 26px;
-    text-align:center;
-    .fa-angle-left{
-      float:left;
-      font-size:36px;
-      font-weight:bold;
-    }
-  }
-  .appBody{
-      padding:0;
-      padding-top:10px;
-      min-height:450px;
-    .mainImageContainer{
-      position:relative;
-      width:100%;
-      text-align:center;
-      img{
-        border-radius: 50%;
-        width:300px;
-        height:300px;
-        margin:40px auto 0 auto;
-      }
-      .statusCircleContainer{
-        position:absolute;
-        top:64px;
-        left:75%;
-        .statusCircle{
-          border-radius:50%;
-          background-color:#77E7A1;
-          color:white;
-          width:75px;
-          height:75px;
-          text-align:center;
-          position:relative;
-          span{
-            position:absolute;
-            top:27px;
-            left:10px;
-            font-size:15px;
+    padding:0;
+    padding-bottom:10px;
+    margin-top:30px;
+    .appHead{
+        background-color:$buttonColor;
+        color:white;
+        padding:12px;
+        font-size: 26px;
+        text-align:center;
+        .fa-angle-left{
+            float:left;
+            font-size:36px;
             font-weight:bold;
-          }
+            color:white;
         }
-      }
+    }
+    .appBody{
+        padding:0;
+        padding-top:10px;
+        height:450px;
+        overflow-y:auto;
+        overflow-x:hidden;
 
-    }
+//        Profile image
 
-    .profileDetails{
-      padding:20px;
-      .profileName{
-        position:relative;
-        .starContainer{
-          position:absolute;
-          right:-79px;
-          top:-21px;
-        }
-        .star-five {
-           position: relative;
-           display: block;
-           color: $starColor;
-           width: 0px;
-           height: 0px;
-           border-right:  100px solid transparent;
-           border-bottom: 70px  solid $starColor;
-           border-left:   100px solid transparent;
-           -moz-transform:    rotate(35deg) scale(.15);
-           -webkit-transform: rotate(35deg) scale(.15);
-           -ms-transform:     rotate(35deg) scale(.15);
-           -o-transform:      rotate(35deg) scale(.15);
-        }
-        .star-five:before {
-           border-bottom: 80px solid $starColor;
-           border-left: 30px solid transparent;
-           border-right: 30px solid transparent;
-           position: absolute;
-           height: 0;
-           width: 0;
-           top: -45px;
-           left: -65px;
-           display: block;
-           content: '';
-           -webkit-transform: rotate(-35deg);
-           -moz-transform:    rotate(-35deg);
-           -ms-transform:     rotate(-35deg);
-           -o-transform:      rotate(-35deg);
+        .mainImageContainer{
+            position:relative;
+            width:100%;
+            text-align:center;
+            img{
+                border-radius: 50%;
+                width:300px;
+                height:300px;
+                margin:40px auto 0 auto;
+            }
+            .statusCircleContainer{
+                position:absolute;
+                top:64px;
+                left:75%;
+                .statusCircle{
+                    border-radius:50%;
+                    background-color:#77E7A1;
+                    color:white;
+                    width:75px;
+                    height:75px;
+                    text-align:center;
+                    position:relative;
+                    span{
+                        position:absolute;
+                        top:27px;
+                        left:10px;
+                        font-size:15px;
+                        font-weight:bold;
+                    }
+                }
+            }
 
         }
-        .star-five:after {
-           position: absolute;
-           display: block;
-           color: $starColor;
-           top: 3px;
-           left: -105px;
-           width: 0px;
-           height: 0px;
-           border-right: 100px solid transparent;
-           border-bottom: 70px solid $starColor;
-           border-left: 100px solid transparent;
-           -webkit-transform: rotate(-70deg);
-           -moz-transform:    rotate(-70deg);
-           -ms-transform:     rotate(-70deg);
-           -o-transform:      rotate(-70deg);
-           content: '';
-        }
-      }
-      h3{
-        margin-bottom:3px;
-        width:80%;
-      }
-      .profileCity{
-        color:#F77AA2;
-        font-weight:bold;
-        margin-bottom:10px;
-      }
 
+//        Profile details
+
+        .profileDetails{
+            padding:20px;
+            .profileName{
+                position:relative;
+                .starContainer{
+                    position:absolute;
+                    right:-79px;
+                    top:-21px;
+                }
+                .star-five {
+                    position: relative;
+                    display: block;
+                    color: $starColor;
+                    width: 0px;
+                    height: 0px;
+                    border-right:  100px solid transparent;
+                    border-bottom: 70px  solid $starColor;
+                    border-left:   100px solid transparent;
+                    -moz-transform:    rotate(35deg) scale(.15);
+                    -webkit-transform: rotate(35deg) scale(.15);
+                    -ms-transform:     rotate(35deg) scale(.15);
+                    -o-transform:      rotate(35deg) scale(.15);
+                }
+                .star-five:before {
+                    border-bottom: 80px solid $starColor;
+                    border-left: 30px solid transparent;
+                    border-right: 30px solid transparent;
+                    position: absolute;
+                    height: 0;
+                    width: 0;
+                    top: -45px;
+                    left: -65px;
+                    display: block;
+                    content: '';
+                    -webkit-transform: rotate(-35deg);
+                    -moz-transform:    rotate(-35deg);
+                    -ms-transform:     rotate(-35deg);
+                    -o-transform:      rotate(-35deg);
+
+                }
+                .star-five:after {
+                    position: absolute;
+                    display: block;
+                    color: $starColor;
+                    top: 3px;
+                    left: -105px;
+                    width: 0px;
+                    height: 0px;
+                    border-right: 100px solid transparent;
+                    border-bottom: 70px solid $starColor;
+                    border-left: 100px solid transparent;
+                    -webkit-transform: rotate(-70deg);
+                    -moz-transform:    rotate(-70deg);
+                    -ms-transform:     rotate(-70deg);
+                    -o-transform:      rotate(-70deg);
+                    content: '';
+                }
+            }
+            h3{
+                margin-bottom:3px;
+                width:80%;
+            }
+            .profileCity{
+                color:#F77AA2;
+                font-weight:bold;
+                margin-bottom:10px;
+            }
+
+        }
+
+//Chat container and details
+
+        .messageContainer{
+            margin-top:30px;
+            position:relative;
+            .messageText{
+                position:relative;
+                width:60%;
+                margin: 0 auto;
+                padding:16px 20px 16px 20px;
+                color:#DCF1F9;
+//                min-height:90px;
+                font-size:16px;
+                font-weight:bold;
+                border-radius:3px;
+            }
+            .messageImage{
+                img{
+                    border-radius: 50%;
+                    width:60px;
+                    height:60px;
+                }
+                .statusDot{
+                    width:18px;
+                    height:18px;
+                    background-color: #73BC54;
+                    position:absolute;
+                    top:42px;
+                    right:13px;
+                    border-radius:50%;
+                }
+            }
+        }
+        .messageContainerRight{
+            .messageText{
+                background-color:#54BAE2;
+            }
+            .messageImage{
+                img{
+                    position:absolute;
+                    right:12px;
+                    top:1px
+                }
+            }
+        }
+        .messageContainerLeft{
+            .messageText{
+                background-color:#FFFFFF;
+                color:#646464;
+            }
+            .messageImage{
+                img{
+                    position:absolute;
+                    left:10px;
+                    top:0
+                }
+            }
+        }
     }
 
-    .messageContainer{
-      margin-top:30px;
-      position:relative;
-      .messageText{
-        position:relative;
-        width:60%;
-        margin: 0 auto;
-        padding:16px 20px 16px 20px;
-        color:#DCF1F9;
-        min-height:90px;
-        font-size:16px;
-        font-weight:bold;
-        border-radius:3px;
-      }
-      .messageImage{
-        img{
-          border-radius: 50%;
-          width:60px;
-          height:60px;
-        }
-        .statusDot{
-          width:18px;
-          height:18px;
-          background-color: #73BC54;
-          position:absolute;
-          top:42px;
-          right:13px;
-          border-radius:50%;
-        }
-      }
-    }
-    .messageContainerRight{
-      .messageText{
-        background-color:#54BAE2;
-      }
-      .messageImage{
-        img{
-          position:absolute;
-          right:12px;
-          top:1px
-        }
-      }
-    }
-    .messageContainerLeft{
-      .messageText{
-        background-color:#FFFFFF;
-        color:#646464;
-      }
-      .messageImage{
-        img{
-          position:absolute;
-          left:10px;
-          top:0
-        }
-      }
-    }
-  }
+//    Footer
 
-  .appFooter{
-    button{
-      width:100%;
-      height:60px;
-      background-color:#3C3C3C;
-      color:white;
+    .appFooter{
+        button{
+            width:100%;
+            height:60px;
+            background-color:#3C3C3C;
+            color:white;
+        }
+        .inputContainer{
+            position:relative;
+            margin-top:16px;
+            input{
+                border:0 !important;
+                height:50px;
+            }
+        }
     }
-    .inputContainer{
-      position:relative;
-      padding-top:16px;
-      input{
-        border:0 !important;
-        height:50px;
-      }
-    }
-  }
 }
 
+//    Other
+
+.added{
+    background-color:brown !important;
+}
+.notAdded{
+    background-color: #3C3C3C !important;
+}
 
 .triangle-topright {
-  position:absolute;
-  top:0;
-  left:-9px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid white;
-  border-left: 10px solid transparent;
+    position:absolute;
+    top:0;
+    left:-9px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid white;
+    border-left: 10px solid transparent;
 }
 .triangle-topleft {
-  position:absolute;
-  top:0;
-  right:-8px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid #54BAE2;
-  border-right: 10px solid transparent;
+    position:absolute;
+    top:0;
+    right:-8px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #54BAE2;
+    border-right: 10px solid transparent;
 }
