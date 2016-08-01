@@ -1,14 +1,48 @@
 <?php
 require_once('parts/header.php');
 ?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-3 col-xs-12 appContainer">
+      <div class="col-sm-12 appHead">
+        <div class="col-sm-12">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+          Sophie
+        </div>
+      </div>
+      <div class="col-sm-12 appBody">
+        <div class="mainImageContainer">
+          <a href="chat.php"> <img src="images/obrazek.jpg" /></a>
+          <div class="statusCircleContainer">
+            <div class="statusCircle"><span>ONLINE</span></div>
+          </div>
+        </div>
+        <div class="profileDetails">
+          <div class="profileName"><h3>Sophie, 22</h3><div class="starContainer"> <span class="star-five"></span></div></div>
+          <div class="profileCity">New York</div>
+          <div class="profileDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec eu urna accumsan, euismod lorem eget, euismod odio.
+            Mauris viverra velit vitae libero dapibus, et faucibus ipsum vehicula.
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 appFooter">
+        <button class="btn btn-success">ADD AS FRIEND</Button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Date App</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
 
-    </body>
-</html>
+
+
+
+
+
+
+
+
+<?php
+require_once('parts/footer.php');
+?>
