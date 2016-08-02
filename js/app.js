@@ -4,7 +4,19 @@ $(document).ready(function(){
             messages : []
         },
         init : function(){
-            this.writeChatMessages()
+            this.getChatWindowHeight();
+            this.writeChatMessages();
+            // this.scrollToBottom();
+        },
+        // scrollToBottom : function(){
+        //   $('.chatAppBody').animate({
+        //       scrollTop: $(".chatAppBody").children().last().offset().top
+        //   }, 2000);
+        // },
+        getChatWindowHeight : function(){
+          var height = $(window).height()  ;
+          $('.appContainer').css('min-height',height+'px');
+          $('.appBody').css('min-height',(height - 140)+'px');
         },
         addFriend : function(){
             $('.addFriend').click(function(){
@@ -12,12 +24,10 @@ $(document).ready(function(){
                 var appContainer = $('.appContainer');
 
                 if(button.hasClass('notAdded')){
-                    console.log(button);
                     button.removeClass('notAdded').addClass('added').text('REMOVE FRIEND');
                     appContainer.css("background-color","#D0EDCF")
                 }
                 else if(button.hasClass('added')){
-                    console.log(button);
                     button.removeClass('added').addClass('notAdded').text('ADD AS FRIEND');
                     appContainer.css("background-color","#EDEBEC")
                 }
@@ -44,9 +54,13 @@ $(document).ready(function(){
                     if(message.length != 0){
                         app.data.messages.push(message);
                         sessionStorage.setItem('messages', app.data.messages);
-                        $('.chatAppBody').append('<div class="messageContainer messageContainerLeft"><div class="messageText">'+message+'<span class="triangle-topright"></span></div><div class="messageImage"><img src="images/obrazek.jpg"/></div></div>')
+                        $('.chatAppBody').append('<div class="messageContainer messageContainerLeft"><div class="messageText">'+message+'<span class="triangle-topright"></span></div><div class="messageImage"><img src="images/mancl.jpg"/></div></div>')
                     }
                     input.val('');
+                    console.log($(".chatAppBody").children().last());
+                    $('.chatAppBody').animate({
+                        scrollTop: $(".chatAppBody").children().last().offset().top
+                    }, 100);
                 }
             });
         },
@@ -57,20 +71,14 @@ $(document).ready(function(){
                 app.data.messages = storageMessages.split(',');
                 $.each( app.data.messages, function( index, value ){
                     if(index == 0){
-                        $('.chatAppBody').append('<div class="messageContainer messageContainerRight"><div class="messageText">'+value+'<span class="triangle-topleft"></span></div><div class="messageImage"><a href="index.php"><img src="images/obrazek.jpg"/></a><span class="statusDot"></span></div></div>');
+                        $('.chatAppBody').append('<div class="messageContainer messageContainerRight"><div class="messageText">'+value+'<span class="triangle-topleft"></span></div><div class="messageImage"><a href="index.php"><img src="images/girl.jpg"/></a><span class="statusDot"></span></div></div>');
                     }else{
-                        $('.chatAppBody').append('<div class="messageContainer messageContainerLeft"><div class="messageText">'+value+'<span class="triangle-topright"></span></div><div class="messageImage"><img src="images/obrazek.jpg"/></div></div>');
+                        $('.chatAppBody').append('<div class="messageContainer messageContainerLeft"><div class="messageText">'+value+'<span class="triangle-topright"></span></div><div class="messageImage"><img src="images/mancl.jpg"/></div></div>');
                     }
                 });
-
-
             }
-
-            console.log(app.data.messages);
         }
     }
-
-
 
     app.init();
     app.addFriend();
@@ -78,4 +86,3 @@ $(document).ready(function(){
     app.appendToMessagesArray();
 
 })
-

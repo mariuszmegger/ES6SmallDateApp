@@ -3,10 +3,13 @@ body {
 
 .appContainer {
   border: 1px solid black;
-  min-height: 500px;
   padding: 0;
   padding-bottom: 10px;
-  margin-top: 30px; }
+  position: realtive; }
+  @media (max-width: 1023px) {
+    .appContainer {
+      margin-top: 0;
+      border: none; } }
   .appContainer .appHead {
     background-color: #606060;
     color: white;
@@ -18,144 +21,171 @@ body {
       font-size: 36px;
       font-weight: bold;
       color: white; }
+  .appContainer .chatAppBody {
+    overflow-y: auto !important;
+    overflow-x: hidden; }
+    @media (max-width: 1023px) {
+      .appContainer .chatAppBody {
+        height: 380px !important;
+        border: none; } }
   .appContainer .appBody {
     padding: 0;
     padding-top: 10px;
-    height: 450px;
-    overflow-y: auto;
-    overflow-x: hidden; }
-    .appContainer .appBody .mainImageContainer {
-      position: relative;
-      width: 100%;
-      text-align: center; }
-      .appContainer .appBody .mainImageContainer img {
+    height: 600px;
+    overflow-x: hidden;
+    margin-bottom: 60px; }
+  .appContainer .mainImageContainer {
+    position: relative;
+    width: 100%;
+    text-align: center; }
+    .appContainer .mainImageContainer img {
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      margin: 40px auto 0 auto; }
+      @media (max-width: 1023px) {
+        .appContainer .mainImageContainer img {
+          width: 250px;
+          height: 250px; } }
+    .appContainer .mainImageContainer .statusCircleContainer {
+      position: absolute;
+      top: 64px;
+      left: 68%; }
+      .appContainer .mainImageContainer .statusCircleContainer .statusCircle {
         border-radius: 50%;
-        width: 300px;
-        height: 300px;
-        margin: 40px auto 0 auto; }
-      .appContainer .appBody .mainImageContainer .statusCircleContainer {
-        position: absolute;
-        top: 64px;
-        left: 75%; }
-        .appContainer .appBody .mainImageContainer .statusCircleContainer .statusCircle {
-          border-radius: 50%;
-          background-color: #77E7A1;
-          color: white;
-          width: 75px;
-          height: 75px;
-          text-align: center;
-          position: relative; }
-          .appContainer .appBody .mainImageContainer .statusCircleContainer .statusCircle span {
-            position: absolute;
-            top: 27px;
-            left: 10px;
-            font-size: 15px;
-            font-weight: bold; }
-    .appContainer .appBody .profileDetails {
-      padding: 20px; }
-      .appContainer .appBody .profileDetails .profileName {
+        background-color: #77E7A1;
+        color: white;
+        width: 75px;
+        height: 75px;
+        text-align: center;
         position: relative; }
-        .appContainer .appBody .profileDetails .profileName .starContainer {
+        .appContainer .mainImageContainer .statusCircleContainer .statusCircle span {
           position: absolute;
-          right: -79px;
-          top: -21px; }
-        .appContainer .appBody .profileDetails .profileName .star-five {
-          position: relative;
-          display: block;
-          color: white;
-          width: 0px;
-          height: 0px;
-          border-right: 100px solid transparent;
-          border-bottom: 70px solid white;
-          border-left: 100px solid transparent;
-          -moz-transform: rotate(35deg) scale(0.15);
-          -webkit-transform: rotate(35deg) scale(0.15);
-          -ms-transform: rotate(35deg) scale(0.15);
-          -o-transform: rotate(35deg) scale(0.15); }
-        .appContainer .appBody .profileDetails .profileName .star-five:before {
-          border-bottom: 80px solid white;
-          border-left: 30px solid transparent;
-          border-right: 30px solid transparent;
-          position: absolute;
-          height: 0;
-          width: 0;
-          top: -45px;
-          left: -65px;
-          display: block;
-          content: '';
-          -webkit-transform: rotate(-35deg);
-          -moz-transform: rotate(-35deg);
-          -ms-transform: rotate(-35deg);
-          -o-transform: rotate(-35deg); }
-        .appContainer .appBody .profileDetails .profileName .star-five:after {
-          position: absolute;
-          display: block;
-          color: white;
-          top: 3px;
-          left: -105px;
-          width: 0px;
-          height: 0px;
-          border-right: 100px solid transparent;
-          border-bottom: 70px solid white;
-          border-left: 100px solid transparent;
-          -webkit-transform: rotate(-70deg);
-          -moz-transform: rotate(-70deg);
-          -ms-transform: rotate(-70deg);
-          -o-transform: rotate(-70deg);
-          content: ''; }
-      .appContainer .appBody .profileDetails h3 {
-        margin-bottom: 3px;
-        width: 80%; }
-      .appContainer .appBody .profileDetails .profileCity {
-        color: #F77AA2;
-        font-weight: bold;
-        margin-bottom: 10px; }
-    .appContainer .appBody .messageContainer {
-      margin-top: 30px;
+          top: 27px;
+          left: 10px;
+          font-size: 15px;
+          font-weight: bold; }
+  .appContainer .profileDetails {
+    padding: 20px; }
+    .appContainer .profileDetails .profileName {
       position: relative; }
-      .appContainer .appBody .messageContainer .messageText {
-        position: relative;
-        width: 60%;
-        margin: 0 auto;
-        padding: 16px 20px 16px 20px;
-        color: #DCF1F9;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 3px; }
-      .appContainer .appBody .messageContainer .messageImage img {
-        border-radius: 50%;
-        width: 60px;
-        height: 60px; }
-      .appContainer .appBody .messageContainer .messageImage .statusDot {
-        width: 18px;
-        height: 18px;
-        background-color: #73BC54;
+      .appContainer .profileDetails .profileName .starContainer {
         position: absolute;
-        top: 42px;
-        right: 13px;
-        border-radius: 50%; }
-    .appContainer .appBody .messageContainerRight .messageText {
-      background-color: #54BAE2; }
-    .appContainer .appBody .messageContainerRight .messageImage img {
+        right: -79px;
+        top: -21px; }
+      .appContainer .profileDetails .profileName .star-five {
+        position: relative;
+        display: block;
+        color: white;
+        width: 0px;
+        height: 0px;
+        border-right: 100px solid transparent;
+        border-bottom: 70px solid white;
+        border-left: 100px solid transparent;
+        -moz-transform: rotate(35deg) scale(0.15);
+        -webkit-transform: rotate(35deg) scale(0.15);
+        -ms-transform: rotate(35deg) scale(0.15);
+        -o-transform: rotate(35deg) scale(0.15); }
+      .appContainer .profileDetails .profileName .star-five:before {
+        border-bottom: 80px solid white;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: -45px;
+        left: -65px;
+        display: block;
+        content: '';
+        -webkit-transform: rotate(-35deg);
+        -moz-transform: rotate(-35deg);
+        -ms-transform: rotate(-35deg);
+        -o-transform: rotate(-35deg); }
+      .appContainer .profileDetails .profileName .star-five:after {
+        position: absolute;
+        display: block;
+        color: white;
+        top: 3px;
+        left: -105px;
+        width: 0px;
+        height: 0px;
+        border-right: 100px solid transparent;
+        border-bottom: 70px solid white;
+        border-left: 100px solid transparent;
+        -webkit-transform: rotate(-70deg);
+        -moz-transform: rotate(-70deg);
+        -ms-transform: rotate(-70deg);
+        -o-transform: rotate(-70deg);
+        content: ''; }
+    .appContainer .profileDetails h3 {
+      margin-bottom: 3px;
+      width: 80%; }
+    .appContainer .profileDetails .profileCity {
+      color: #F77AA2;
+      font-weight: bold;
+      margin-bottom: 10px; }
+  .appContainer .messageContainer {
+    margin-top: 30px;
+    position: relative; }
+    .appContainer .messageContainer .messageText {
+      position: relative;
+      width: 60%;
+      margin: 0 auto;
+      padding: 16px 20px 16px 20px;
+      color: #DCF1F9;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 3px; }
+    .appContainer .messageContainer .messageImage img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px; }
+    .appContainer .messageContainer .messageImage .statusDot {
+      width: 18px;
+      height: 18px;
+      background-color: #73BC54;
       position: absolute;
-      right: 12px;
-      top: 1px; }
-    .appContainer .appBody .messageContainerLeft .messageText {
-      background-color: #FFFFFF;
-      color: #646464; }
-    .appContainer .appBody .messageContainerLeft .messageImage img {
+      top: 42px;
+      right: 13px;
+      border-radius: 50%; }
+  .appContainer .messageContainerRight .messageText {
+    background-color: #54BAE2; }
+  .appContainer .messageContainerRight .messageImage img {
+    position: absolute;
+    right: 12px;
+    top: 1px; }
+  .appContainer .messageContainerLeft .messageText {
+    background-color: #FFFFFF;
+    color: #646464; }
+  .appContainer .messageContainerLeft .messageImage img {
+    position: absolute;
+    left: 10px;
+    top: 0; }
+
+.appFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100% !important;
+  margin-bottom: 10px;
+  padding-top: 20px; }
+  @media (max-width: 1023px) {
+    .appFooter {
+      width: 97% !important;
       position: absolute;
-      left: 10px;
-      top: 0; }
-  .appContainer .appFooter button {
+      bottom: 11px;
+      left: 0;
+      border: none;
+      margin-bottom: 0; } }
+  .appFooter button {
     width: 100%;
     height: 60px;
     background-color: #3C3C3C;
     color: white; }
-  .appContainer .appFooter .inputContainer {
+  .appFooter .inputContainer {
     position: relative;
     margin-top: 16px; }
-    .appContainer .appFooter .inputContainer input {
+    .appFooter .inputContainer input {
       border: 0 !important;
       height: 50px; }
 
