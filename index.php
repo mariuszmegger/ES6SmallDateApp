@@ -28,7 +28,7 @@ require_once('parts/header.php');
         </div>
       </div>
       <div class="col-sm-12 appFooter">
-        <button class="btn addFriend notAdded">ADD AS FRIEND</Button>
+        <button class="btn addFriend notAdded">ADD AS FRIEND</button>
       </div>
     </div>
 

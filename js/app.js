@@ -6,18 +6,16 @@ $(document).ready(function(){
         init : function(){
             this.getChatWindowHeight();
             this.writeChatMessages();
-            // this.scrollToBottom();
         },
-        // scrollToBottom : function(){
-        //   $('.chatAppBody').animate({
-        //       scrollTop: $(".chatAppBody").children().last().offset().top
-        //   }, 2000);
-        // },
+        // Getting height of window and chat container required for positioning footer and height of chat window.
         getChatWindowHeight : function(){
           var height = $(window).height()  ;
           $('.appContainer').css('min-height',height+'px');
-          $('.appBody').css('min-height',(height - 140)+'px');
+          $('.appChatBody').css('min-height',(height - 140)+'px');
         },
+
+        // Changing styles when add friend clicked
+
         addFriend : function(){
             $('.addFriend').click(function(){
                 var button = $(this);
@@ -33,10 +31,12 @@ $(document).ready(function(){
                 }
             })
         },
-        getRandomMessage : function(){
 
+        // Writing and saving to sessions storage random message when session storage is empty
+
+        getRandomMessage : function(){
             var storageMessages = sessionStorage.getItem('messages');
-            var randomMessagesArray = ['random message 1', 'random message 2', 'random message 3', 'random message 4'];
+            var randomMessagesArray = ['Random message 1', 'Random message 2', 'Random message 3', 'Random message 4'];
             if(storageMessages == null){
                 var randomMessage = randomMessagesArray[Math.floor(Math.random() * randomMessagesArray.length)];
                 app.data.messages.push(randomMessage);
@@ -45,10 +45,11 @@ $(document).ready(function(){
             }
 
         },
-
+        // Adding new messages to chat window and session storage
         appendToMessagesArray : function(){
             $('.messageInput').keypress(function(e) {
                 var input = $(this);
+                var chatContainer = $('.chatAppBody');
                 if(e.which == 13) {
                     var message = input.val();
                     if(message.length != 0){
@@ -57,14 +58,13 @@ $(document).ready(function(){
                         $('.chatAppBody').append('<div class="messageContainer messageContainerLeft"><div class="messageText">'+message+'<span class="triangle-topright"></span></div><div class="messageImage"><img src="images/mancl.jpg"/></div></div>')
                     }
                     input.val('');
-                    console.log($(".chatAppBody").children().last());
-                    $('.chatAppBody').animate({
-                        scrollTop: $(".chatAppBody").children().last().offset().top
+                    chatContainer.animate({
+                        scrollTop: $(".messageInput").offset().top
                     }, 100);
                 }
             });
         },
-
+        // Writing messages if sessions storage is not empty
         writeChatMessages : function(){
             var storageMessages = sessionStorage.getItem('messages');
             if(storageMessages != null){
