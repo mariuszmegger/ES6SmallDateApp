@@ -7,7 +7,6 @@ require_once('parts/header.php');
         <div class="col-sm-4 col-xs-12 appContainer">
             <div class="col-sm-12 appHead">
                 <div class="col-sm-12">
-                    <!-- <i class="fa fa-angle-left" aria-hidden="true"></i> -->
                     Sophie
                 </div>
             </div>
@@ -23,15 +22,6 @@ require_once('parts/header.php');
 
     </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 <?php
 require_once('parts/footer.php');

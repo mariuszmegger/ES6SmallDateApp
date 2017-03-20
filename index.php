@@ -35,15 +35,6 @@ require_once('parts/header.php');
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
 <?php
 require_once('parts/footer.php');
 ?>
